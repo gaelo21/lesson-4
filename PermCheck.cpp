@@ -1,3 +1,4 @@
+// ********************************* solution 1: **************************************
 int solution(vector<int> &A) {
     // Implement your solution here
     int n = A.size();
@@ -13,4 +14,28 @@ int solution(vector<int> &A) {
     }
 
     return 1;
+}
+
+// ********************************* solution 2: **************************************
+
+int solution(vector<int> &A) {
+    // Implement your solution here
+    int n = A.size(), res =0;
+    vector<int> B(n, -1);
+    for(int i = 0; i < n; ++i){
+        if(n >= A[i]){
+            B[A[i]-1] = 1;
+        }
+    }
+    for(int i = 0; i < n; ++i){
+        if(B[i] == 1){
+            res = 1;
+        }
+        else{
+            res = 0;
+            break;
+        }
+    }
+
+    return res;
 }
